@@ -13,14 +13,16 @@ public class MortgageCalculator {
                 / (power(1 + monthlyInterest, numberOfPayment) - 1);
     }
 
-    private double power(double base, int exponent) {
-        if (exponent == 0)
+    public double power(double base, int exponent) {
+        if (exponent == 0) {
             return 1;
+        }
 
         double result = power(base, exponent / 2);
         result = result * result;
-        if (exponent % 2 != 0)
+        if (exponent % 2 != 0) {
             result = result * base;
+        }
         return result;
     }
 
