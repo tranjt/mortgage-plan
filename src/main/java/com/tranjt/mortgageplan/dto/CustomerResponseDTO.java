@@ -1,7 +1,7 @@
 package com.tranjt.mortgageplan.dto;
 
-
 import java.util.Objects;
+
 
 public class CustomerResponseDTO {
 

@@ -2,6 +2,7 @@ package com.tranjt.mortgageplan.utils;
 
 import org.springframework.stereotype.Component;
 
+
 @Component("mortgageCalculator")
 public class MortgageCalculator {
 

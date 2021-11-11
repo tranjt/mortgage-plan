@@ -1,11 +1,12 @@
 package com.tranjt.mortgageplan.dto;
 
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
+
 public class CustomerRequestDTO {
+
     @NotNull
     @Size(min = 3, max = 30, message = "Name must be between 3-30 characters")
     private String name;

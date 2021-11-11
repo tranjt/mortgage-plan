@@ -5,34 +5,34 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
 @SpringBootTest
 class MortgageCalculatorTest {
 
     @Autowired
     private MortgageCalculator mortgageCalculator;
 
-
     @Test
-    void testCalculateMonthlyPayment() {
+    void Calculate_monthly_payment() {
         double interest = 5;
         double totalLoan = 1000;
         int year = 2;
+        double expected = 43.871389734068096;
 
         double result = mortgageCalculator.calculateMonthlyPayment(interest, totalLoan, year);
 
-        double expected = 43.871389734068096;
         Assertions.assertEquals(expected, result);
 
     }
 
     @Test
-    void testPower() {
-        double base = 2;
+    void Power_of_two_numbers() {
+        double base = 4;
         int exponent = 2;
+        double expected = 16;
 
         double result = mortgageCalculator.power(base, exponent);
 
-        double expected = 4;
         Assertions.assertEquals(expected, result);
     }
 }

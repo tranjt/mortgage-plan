@@ -1,10 +1,11 @@
 package com.tranjt.mortgageplan.model;
 
-
 import javax.persistence.*;
+
 
 @Entity
 public class Customer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)

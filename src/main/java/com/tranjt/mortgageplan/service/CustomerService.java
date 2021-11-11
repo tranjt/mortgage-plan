@@ -1,6 +1,5 @@
 package com.tranjt.mortgageplan.service;
 
-
 import com.tranjt.mortgageplan.dto.CustomerRequestDTO;
 import com.tranjt.mortgageplan.dto.CustomerResponseDTO;
 import com.tranjt.mortgageplan.model.Customer;
@@ -15,6 +14,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class CustomerService {
+
     private final CustomerRepository customerRepository;
     private final MortgageCalculator mortgageCalculator;
 
