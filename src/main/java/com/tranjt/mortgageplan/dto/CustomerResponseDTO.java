@@ -1,6 +1,8 @@
 package com.tranjt.mortgageplan.dto;
 
 
+import java.util.Objects;
+
 public class CustomerResponseDTO {
 
     private Long id;
@@ -68,5 +70,23 @@ public class CustomerResponseDTO {
 
     public void setFixedMonthlyPayment(double fixedMonthlyPayment) {
         this.fixedMonthlyPayment = fixedMonthlyPayment;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CustomerResponseDTO that = (CustomerResponseDTO) o;
+        return Double.compare(that.totalLoan, totalLoan) == 0
+                && Double.compare(that.interest, interest) == 0
+                && years == that.years
+                && Double.compare(that.fixedMonthlyPayment, fixedMonthlyPayment) == 0
+                && id.equals(that.id) && name.equals(that.name
+        );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, totalLoan, interest, years, fixedMonthlyPayment);
     }
 }

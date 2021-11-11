@@ -13,26 +13,26 @@ class MortgageCalculatorTest {
 
 
     @Test
-    void calculateMonthlyPayment() {
+    void testCalculateMonthlyPayment() {
         double interest = 5;
-        double totalLoan  = 1000;
+        double totalLoan = 1000;
         int year = 2;
 
         double result = mortgageCalculator.calculateMonthlyPayment(interest, totalLoan, year);
 
         double expected = 43.871389734068096;
-        Assertions.assertEquals(result, expected);
+        Assertions.assertEquals(expected, result);
 
     }
 
     @Test
-    void power() {
+    void testPower() {
         double base = 2;
         int exponent = 2;
 
         double result = mortgageCalculator.power(base, exponent);
 
         double expected = 4;
-        Assertions.assertEquals(result, expected);
+        Assertions.assertEquals(expected, result);
     }
 }

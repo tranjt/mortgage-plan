@@ -29,7 +29,7 @@ public class CustomerController {
         return new ResponseEntity<>(newCustomer, HttpStatus.OK);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<CustomerResponseDTO> updateCustomer(
             @PathVariable("id") Long id,
             @Valid @RequestBody CustomerRequestDTO customerRequestDTO
@@ -38,7 +38,7 @@ public class CustomerController {
         return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCustomer(@PathVariable("id") Long id) {
         customerService.deleteCustomer(id);
         return new ResponseEntity<>(HttpStatus.OK);
