@@ -13,7 +13,7 @@ class MortgageCalculatorTest {
     private MortgageCalculator mortgageCalculator;
 
     @Test
-    void Calculate_monthly_payment() {
+    void calculateMonthlyPayment() {
         double interest = 5;
         double totalLoan = 1000;
         int year = 2;
@@ -26,7 +26,7 @@ class MortgageCalculatorTest {
     }
 
     @Test
-    void Power_of_two_numbers() {
+    void powerOfTwoNumbers() {
         double base = 4;
         int exponent = 2;
         double expected = 16;

@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -27,7 +26,6 @@ class CustomerServiceTest {
 
     private final MortgageCalculator mortgageCalculator = new MortgageCalculator();
 
-    @InjectMocks
     private CustomerService customerService;
 
     @BeforeEach
@@ -36,7 +34,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    void Should_return_all_customers() {
+    void shouldReturnAllCustomers() {
         List<Customer> customers = new ArrayList<>();
         customers.add(new Customer(1L, "John", 1000, 5, 2));
         customers.add(new Customer(2L, "Jill", 2000, 6, 3));
@@ -54,7 +52,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    void Should_add_new_customer() {
+    void shouldAddNewCustomer() {
         CustomerRequestDTO requestCustomerDTO = new CustomerRequestDTO("John", 1000, 5, 2);
         Customer customer = new Customer(1L, "John", 1000, 5, 2);
         CustomerResponseDTO expectedCustomerRespDTO = new CustomerResponseDTO(
@@ -69,7 +67,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    void Should_update_customer() {
+    void shouldUpdateCustomer() {
         CustomerRequestDTO requestCustomerDTO = new CustomerRequestDTO("John", 1000, 5, 2);
         Customer customer = new Customer(1L, "John", 1000, 5, 2);
         CustomerResponseDTO expectedCustomerRespDTO = new CustomerResponseDTO(
@@ -84,7 +82,7 @@ class CustomerServiceTest {
     }
 
     @Test
-    void Should_delete_customer() {
+    void shouldDeleteCustomer() {
         customerService.deleteCustomer(1L);
 
         verify(customerRepository).deleteById(1L);
