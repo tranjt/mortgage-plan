@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 @Component("mortgageCalculator")
 public class MortgageCalculator {
 
-    public double calculateMonthlyPayment(double interest, double totalLoan, int year) {
-        double monthlyInterest = interest / (12*100);
+    public double calculateMonthlyPayment(double totalLoan, double interest, int year) {
+        double monthlyInterest = interest / (12 * 100);
         int numberOfPayment = year * 12;
 
         return (totalLoan * monthlyInterest * power(1 + monthlyInterest, numberOfPayment))

@@ -64,8 +64,8 @@ public class CustomerService {
 
     private CustomerResponseDTO createCustomerResponseDTO(Customer customer) {
         double fixedMonthlyPayment = mortgageCalculator.calculateMonthlyPayment(
-                customer.getInterest(),
                 customer.getTotalLoan(),
+                customer.getInterest(),
                 customer.getYears()
         );
 
