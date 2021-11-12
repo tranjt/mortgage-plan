@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 @RestController
-@RequestMapping("/mortgage-plan")
+@RequestMapping("/api/mortgage-plan")
 public class CustomerController {
 
     @Autowired
