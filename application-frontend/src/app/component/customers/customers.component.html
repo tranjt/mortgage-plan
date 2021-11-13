@@ -1,27 +1,25 @@
-<div class="container" style="margin-top: 70px;">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>id</th>
-        <th>Name</th>
-        <th>Total Loan</th>
-        <th>Interest</th>
-        <th>years</th>
-        <th>Monthly Payment</th>
+<table class="table table-striped border"  style="margin-top: 70px;">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>id</th>
+      <th>Name</th>
+      <th>Total Loan</th>
+      <th>Interest</th>
+      <th>years</th>
+      <th>Monthly Payment</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let customer of customers let index = index">
-        <td>{{ index + 1 }}</td>
-        <td>{{ customer.id }}</td>
-        <td> {{ customer.name }}</td>
-        <td> {{ customer.totalLoan }} €</td>
-        <td> {{ customer.interest }}</td>
-        <td> {{ customer.years }}</td>
-        <td> {{ customer.fixedMonthlyPayment | number:'1.0-2'}} €</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers let index = index">
+      <td>{{ index + 1 }}</td>
+      <td>{{ customer.id }}</td>
+      <td> {{ customer.name }}</td>
+      <td> {{ customer.totalLoan }} €</td>
+      <td> {{ customer.interest }}</td>
+      <td> {{ customer.years }}</td>
+      <td> {{ customer.fixedMonthlyPayment | number:'1.0-2'}} €</td>
+    </tr>
+  </tbody>
+</table>

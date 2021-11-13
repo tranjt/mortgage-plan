@@ -1,3 +1,61 @@
-<div class="container" style="margin-top: 70px;">
-  <p>mortgage-calculator works!</p>
+<div class="row" [ngClass]="{'col-md-6 mx-auto' : !submitted}" style="margin-top: 70px;">
+  <div class="col">
+    <form (ngSubmit)="onSubmit()" #loanForm="ngForm">
+
+      <div class="card card-primary">
+        <div class="card-header bg-info text-white">
+          <h3 class="card-title">Loan Calculator</h3>
+        </div>
+        <div class="card-body">
+
+          <div class="form-group ">
+            <label for="totalLoan" class="form-label">Loan Amount</label>
+            <input type="number" class="form-control" id="totalLoan" required [(ngModel)]="model.totalLoan"
+              name="totalLoan" #totalLoan="ngModel"
+              [ngClass]="{ 'is-invalid': totalLoan.touched && totalLoan.errors?.['required']}" placeholder="€  ">
+            <span *ngIf="totalLoan.invalid && totalLoan.touched" class="invalid-feedback">
+              Please enter loan amount
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="interest" class="form-label">Interest Rate</label>
+            <input type="number" class="form-control" id="interest" required [(ngModel)]="model.interest"
+              name="interest" #interest="ngModel"
+              [ngClass]="{ 'is-invalid': interest.touched && interest.errors?.['required']}" placeholder="%  ">
+            <span *ngIf="interest.invalid && interest.touched" class="invalid-feedback">
+              Please enter interest rate
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="years" class="form-label">Loan Term</label>
+            <input type="number" class="form-control" id="years" required [(ngModel)]="model.years" name="years"
+              #years="ngModel" [ngClass]="{ 'is-invalid': years.touched && years.errors?.['required']}"
+              placeholder="years  ">
+            <span *ngIf="years.invalid && years.touched" class="invalid-feedback">
+              Please enter loan term
+            </span>
+          </div>
+
+          <div class="card-footer">
+
+            <button type="submit" class="btn submit" [disabled]="!loanForm.form.valid">Calculate</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="col"  *ngIf="submitted">
+    <div class="card card-primary">
+      <div class="card-header bg-success text-white">
+        <h3 class="card-title">Results</h3>
+      </div>
+      <div class="card-body">
+      </div>
+    </div>
+  </div>
+
 </div>

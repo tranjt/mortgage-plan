@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+
+export class Loan {
+  public totalLoan: number;
+  public years: number;
+  public interest: number;
+}
+
 @Component({
   selector: 'app-mortgage-calculator',
   templateUrl: './mortgage-calculator.component.html',
@@ -7,9 +14,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MortgageCalculatorComponent implements OnInit {
 
-  constructor() { }
+  submitted = false;
+  model = new Loan();
 
-  ngOnInit(): void {
+  constructor() { }  
+
+  ngOnInit() {
   }
 
+  onSubmit() {
+    console.log(this.model);
+    this.submitted = true;
+  }
 }
