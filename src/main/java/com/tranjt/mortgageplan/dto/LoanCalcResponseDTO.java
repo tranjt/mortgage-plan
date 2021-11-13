@@ -17,12 +17,12 @@ public class LoanCalcResponseDTO {
 
     }
 
-    public double getPaymentEveryMonth() {
+    public double getMonthlyPayment() {
         return monthlyPayment;
     }
 
-    public void setPaymentEveryMonth(double paymentEveryMonth) {
-       this.monthlyPayment = paymentEveryMonth;
+    public void setMonthlyPayment(double monthlyPayment) {
+        this.monthlyPayment = monthlyPayment;
     }
 
     public double getTotalPayment() {

@@ -1,5 +1,5 @@
 export class LoanCalculation {
- public paymentEveryMonth: number;
+ public monthlyPayment: number;
  public totalPayment: number;
  public totalInterest: number;
  public payments: number ;

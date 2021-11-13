@@ -23,8 +23,8 @@ export class MortgageCalculatorComponent implements OnInit {
 
   onSubmit() {
     console.log(this.model);
-     this.submitted = true;
-     this.getCalculations();    
+    this.submitted = true;
+    this.getCalculations();
   }
 
   getCalculations(): void {

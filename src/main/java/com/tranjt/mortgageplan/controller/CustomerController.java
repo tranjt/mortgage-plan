@@ -8,6 +8,7 @@ import com.tranjt.mortgageplan.service.LoanCalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -15,6 +16,7 @@ import javax.validation.constraints.Min;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+@Validated
 @RestController
 @RequestMapping("/api/mortgage-plan")
 public class CustomerController {
@@ -51,6 +53,7 @@ public class CustomerController {
         customerService.deleteCustomer(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 
     @GetMapping("/calculate-loan")
     public ResponseEntity<LoanCalcResponseDTO> getLoanCalculation(
