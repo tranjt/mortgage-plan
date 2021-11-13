@@ -46,16 +46,8 @@
       </div>
 
     </form>
-  </div>
+  </div>  
 
-  <div class="col"  *ngIf="submitted">
-    <div class="card card-primary">
-      <div class="card-header bg-success text-white">
-        <h3 class="card-title">Results</h3>
-      </div>
-      <div class="card-body">
-      </div>
-    </div>
-  </div>
+  <app-calc-result class="col" *ngIf="submitted" [loanCalc]="loanCalc"></app-calc-result>
 
 </div>

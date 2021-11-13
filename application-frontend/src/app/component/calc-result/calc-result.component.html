@@ -1,0 +1,21 @@
+<div *ngIf="loanCalc">
+  <div class="card card-primary">
+    <div class="card-header bg-success text-white">
+      <h3 class="card-title">Results:</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">Monthly payment:</div>
+        <div class="col text-right">{{ (+loanCalc.paymentEveryMonth) | number:'1.0-2'}}€</div>
+      </div>
+      <div class="row">
+        <div class="col">Total of {{ (+loanCalc.payments)}} payment:</div>
+        <div class="col text-right">{{ (+loanCalc.totalPayment) | number:'1.0-2'}}€</div>
+      </div>
+      <div class="row">
+        <div class="col">Total interest:</div>
+        <div class="col text-right">{{ (+loanCalc.totalInterest) | number:'1.0-2'}}€</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Loan } from 'src/app/model/loan';
+import { LoanCalculation } from 'src/app/model/loanCalc';
+import { MortgageCalculatorService } from 'src/app/service/mortgage-calculator.service';
 
-export class Loan {
-  public totalLoan: number;
-  public years: number;
-  public interest: number;
-}
 
 @Component({
   selector: 'app-mortgage-calculator',
@@ -16,14 +14,24 @@ export class MortgageCalculatorComponent implements OnInit {
 
   submitted = false;
   model = new Loan();
+  loanCalc: LoanCalculation | undefined;
 
-  constructor() { }  
+  constructor(private mortgageCalculatorService: MortgageCalculatorService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
     console.log(this.model);
-    this.submitted = true;
+     this.submitted = true;
+     this.getCalculations();    
   }
+
+  getCalculations(): void {
+    this.mortgageCalculatorService.getLoanCalculation(this.model).subscribe(data => {
+      this.loanCalc = data;
+      console.log(this.loanCalc);
+    });
+  }
+
 }
