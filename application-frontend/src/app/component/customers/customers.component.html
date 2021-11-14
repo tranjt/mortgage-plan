@@ -11,18 +11,18 @@
         <th>Interest</th>
         <th>years</th>
         <th>Monthly Payment</th>
-
       </tr>
     </thead>
+
     <tbody>
       <tr *ngFor="let customer of customers let index = index">
         <td>{{ index + 1 }}</td>
         <td>{{ customer.id }}</td>
-        <td> {{ customer.name }}</td>
-        <td> {{ customer.totalLoan }} €</td>
-        <td> {{ customer.interest }}</td>
-        <td> {{ customer.years }}</td>
-        <td> {{ customer.fixedMonthlyPayment | number:'1.0-2'}} €</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.totalLoan }} €</td>
+        <td>{{ customer.interest }} %</td>
+        <td>{{ customer.years }}</td>
+        <td>{{ customer.fixedMonthlyPayment | number:'1.0-2'}} €</td>
       </tr>
     </tbody>
   </table>
