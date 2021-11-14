@@ -19,7 +19,7 @@ class MortgageCalculatorTest {
         int year = 2;
         double expected = 43.871389734068096;
 
-        double result = mortgageCalculator.calculateMonthlyPayment(interest, totalLoan, year);
+        double result = mortgageCalculator.calculateMonthlyPayment(totalLoan,interest, year);
 
         Assertions.assertEquals(expected, result);
 
