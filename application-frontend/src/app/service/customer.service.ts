@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable,throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators'
 
 import { Customer } from '../model/customer';
@@ -17,12 +17,11 @@ export class CustomerService {
 
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(`${this.baseURL}/api/mortgage-plan/customers`)
-    .pipe(catchError(this.handleError));
-    ;
+      .pipe(catchError(this.handleError));
   }
 
   handleError(error: HttpErrorResponse) {
     return throwError(() => error);
   }
-  
+
 }

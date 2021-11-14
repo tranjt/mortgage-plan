@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CustomersComponent } from './component/customers/customers.component';
 import { MortgageCalculatorComponent } from './component/mortgage-calculator/mortgage-calculator.component';
 import { CalcResultComponent } from './component/calc-result/calc-result.component';
+import { ErrorMessageComponent } from './component/error-message/error-message.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { CalcResultComponent } from './component/calc-result/calc-result.compone
     CustomersComponent,
     MortgageCalculatorComponent,
     CalcResultComponent,
+    ErrorMessageComponent,
   ],
   imports: [
     BrowserModule,

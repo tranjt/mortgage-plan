@@ -23,26 +23,38 @@ export class MortgageCalculatorComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loan);
-    this.submitted = true;
+    console.log(this.loan);    
     this.getCalculations();
   }
 
   getCalculations(): void {
     this.mortgageCalculatorService.getLoanCalculation(this.loan).subscribe({
       next: data => {
+        this.submitted = true;
         this.loanCalc = data;
         console.log(this.loanCalc);
       },
       error: err => {
-        this.errorMessage = err.error.message
-        console.log(err);
-        console.log(this.errorMessage);
+        this.handleError(err);
       }
     });
   }
 
+  handleError(err: any): void {
+    if (err.status === 0) {
+      this.showErrorMessage("Status: 0, Request did not succeed");
+    }
+    else {
+      this.showErrorMessage(err.error.message);
+    }
+    console.log(err);
+  }
 
-
+  showErrorMessage(errorMessage: string): void {
+    this.errorMessage = errorMessage;
+    setTimeout(() => {
+      this.errorMessage = "";
+    }, 5000);
+  }
 
 }
