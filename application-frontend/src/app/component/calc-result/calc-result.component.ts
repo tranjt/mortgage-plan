@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { LoanCalculation } from 'src/app/model/loanCalc';
 
+
 @Component({
   selector: 'app-calc-result',
   templateUrl: './calc-result.component.html',

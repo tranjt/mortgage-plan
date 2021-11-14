@@ -10,7 +10,7 @@
 
           <div class="form-group ">
             <label for="totalLoan" class="form-label">Loan Amount</label>
-            <input type="number" class="form-control" id="totalLoan" required [(ngModel)]="model.totalLoan"
+            <input type="number" class="form-control" id="totalLoan" required [(ngModel)]="loan.totalLoan"
               name="totalLoan" #totalLoan="ngModel"
               [ngClass]="{ 'is-invalid': totalLoan.touched && totalLoan.errors?.['required']}" placeholder="€  ">
             <span *ngIf="totalLoan.invalid && totalLoan.touched" class="invalid-feedback">
@@ -20,7 +20,7 @@
 
           <div class="form-group">
             <label for="interest" class="form-label">Interest Rate</label>
-            <input type="number" class="form-control" id="interest" required [(ngModel)]="model.interest"
+            <input type="number" class="form-control" id="interest" required [(ngModel)]="loan.interest"
               name="interest" #interest="ngModel"
               [ngClass]="{ 'is-invalid': interest.touched && interest.errors?.['required']}" placeholder="%  ">
             <span *ngIf="interest.invalid && interest.touched" class="invalid-feedback">
@@ -30,7 +30,7 @@
 
           <div class="form-group">
             <label for="years" class="form-label">Loan Term</label>
-            <input type="number" class="form-control" id="years" required [(ngModel)]="model.years" name="years"
+            <input type="number" class="form-control" id="years" required [(ngModel)]="loan.years" name="years"
               #years="ngModel" [ngClass]="{ 'is-invalid': years.touched && years.errors?.['required']}"
               placeholder="years  ">
             <span *ngIf="years.invalid && years.touched" class="invalid-feedback">

@@ -4,10 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomersComponent } from './component/customers/customers.component';
 import { MortgageCalculatorComponent } from './component/mortgage-calculator/mortgage-calculator.component';
 
+
 const routes: Routes = [
   { path: 'customers', component: CustomersComponent },
   { path: 'loanCalculator', component: MortgageCalculatorComponent },
-  { path: '', redirectTo: '/customers', pathMatch: 'full' },
+  { path: '**', redirectTo: '/customers' }
 ];
 
 @NgModule({

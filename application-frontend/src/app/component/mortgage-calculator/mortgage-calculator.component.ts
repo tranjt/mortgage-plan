@@ -13,8 +13,9 @@ import { MortgageCalculatorService } from 'src/app/service/mortgage-calculator.s
 export class MortgageCalculatorComponent implements OnInit {
 
   submitted = false;
-  model = new Loan();
+  loan = new Loan();
   loanCalc: LoanCalculation | undefined;
+  errorMessage: string = "";
 
   constructor(private mortgageCalculatorService: MortgageCalculatorService) { }
 
@@ -22,16 +23,26 @@ export class MortgageCalculatorComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.model);
+    console.log(this.loan);
     this.submitted = true;
     this.getCalculations();
   }
 
   getCalculations(): void {
-    this.mortgageCalculatorService.getLoanCalculation(this.model).subscribe(data => {
-      this.loanCalc = data;
-      console.log(this.loanCalc);
+    this.mortgageCalculatorService.getLoanCalculation(this.loan).subscribe({
+      next: data => {
+        this.loanCalc = data;
+        console.log(this.loanCalc);
+      },
+      error: err => {
+        this.errorMessage = err.error.message
+        console.log(err);
+        console.log(this.errorMessage);
+      }
     });
   }
+
+
+
 
 }
