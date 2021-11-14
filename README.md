@@ -10,15 +10,7 @@ In your IDE `Import Project` or `Open...` and navigate to `build.gradle` file.
 ### Running via command line
 `Java` and `Gradle` installed.
 
-You might need to configure path to `tools.jar` if not found
-edit `gradle.properties` change path to where your `tool.jar` file is located on your system.
-
-In windows it might look like this
-
-`org.gradle.java.home=C:\Program Files\Java\jdk1.8.0_221`
-
 #### Run commands
-
 Navigate to the root of the project via command line and execute the command
 
 `./gradlew bootRun`
@@ -30,6 +22,14 @@ for windows
 Once the application is running navigate to http://localhost:8080
 
 #### Test commands
+You might need to configure path to `tools.jar` if not found
+create/edit `gradle.properties` configure this java path to where your `tool.jar` file is located on your system.
+
+In windows it might look like this
+
+`org.gradle.java.home=C:\Program Files\Java\jdk1.8.0_221`
+
+To run test
 
 `./gradlew test`
 
